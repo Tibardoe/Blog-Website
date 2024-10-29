@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div class="blog-container">
+        <h1>Blogs</h1>
+        <button class="post-button">New Post</button>
+
+        <ul class="blog-list">
+            <% posts.forEach(post=> { %>
+                <li>
+                    <h2>
+                        <%= post.title %>
+                    </h2>
+                    <small>
+                        <%= post.date %>
+                    </small>
+                    <p>
+                        <%= post.content %>
+                    </p>
+                    <small class="author">By: <%= post.author %></small>
+                    <br />
+
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+
+                    <hr />
+                </li>
+
+                <% }); %>
+        </ul>
+    </div>
+
+</body>
+
+</html>

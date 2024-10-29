@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    height: 100vh;
+    margin-bottom: 450px;
+}
+
+.blog-container {
+    width: 70%;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 5%;
+    border-radius: 5px;
+}
+
+.blog-list {
+    list-style: none;
+}
+
+h1,
+.post-button {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.post-button {
+    background-color: rgb(101, 174, 101);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+small {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.author {
+    margin-bottom: 15px;
+}
+
+.edit-button,
+.delete-button {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.edit-button {
+    background-color: rgb(33, 104, 219);
+}
+
+.delete-button {
+    background-color: rgb(226, 84, 84);
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 50px;
+
+}
+
+.post-body {
+    height: 80vh;
+}
+
+.new-title,
+.new-content,
+.new-author {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+
+.create-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-button {
+    padding: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(0, 115, 255);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
