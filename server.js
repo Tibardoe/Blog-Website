@@ -37,6 +37,8 @@ let posts = [
     },
 ];
 
+let lastId = 3;
+
 app.get("/", (req, res) => {
     res.render("index.ejs", { posts: posts });
 });
@@ -46,15 +48,48 @@ app.get("/post", (req, res) => {
 });
 
 app.post("/post", (req, res) => {
+    const newId = lastId += 1;
+    const post = {
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        author: req.body.author,
+        date: new Date(),
+    }
+    posts.push(post);
+    res.redirect("/")
 
 });
 
-app.patch("/edit", () => {
+app.get("/edit/:postId", (req, res) => {
+    const postId = req.params.postId;
+    const post = posts.find(post => post.id == postId);
+
+    if (post) {
+        res.render("edit.ejs", { post: post });
+    } else {
+        res.redirect("/")
+    }
+});
+
+app.post("/edit/:postId", (req, res) => {
+    const postId = req.params.postId;
+    const post = posts.find(post => post.id == postId);
+
+    if (post) {
+        post.title = req.body.postTitle;
+        post.content = req.body.postContent;
+        post.author = req.body.postAuthor;
+        post.date = new Date();
+    }
+    res.redirect("/")
+
 
 });
 
-app.delete("/delete", () => {
-
+app.post("/delete/:postId", (req, res) => {
+    posts = posts.filter(post => post.id !== parseInt(req.params.postId));
+    res.redirect("/");
 });
 
 app.listen(port, () => {

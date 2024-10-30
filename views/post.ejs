@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body class="post-body">
 
     <div class="create-post-container">
         <h1 class="new-heading">New Post</h1>
-        <form class="create-form-container" action="/post" method="post">
+        <form class="create-form-container" action="/post" method="POST">
             <input class="new-title" type="text" name="title" placeholder="Title" required>
             <textarea rows="12" class="new-content" name="content" id="content" placeholder="content"
                 required></textarea>
-            <input class="new-author" type="text" placeholder="Author" required>
-            <button class="create-button">Create Post</button>
+            <input class="new-author" type="text" name="author" placeholder="Author" required>
+            <button type="submit" class="create-button">Create Post</button>
         </form>
     </div>
 </body>

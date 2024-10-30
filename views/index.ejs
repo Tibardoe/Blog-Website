@@ -12,7 +12,7 @@
 
     <div class="blog-container">
         <h1>Blogs</h1>
-        <button class="post-button">New Post</button>
+        <button class="post-button"><a href="/post">New Post</a></button>
 
         <ul class="blog-list">
             <% posts.forEach(post=> { %>
@@ -29,8 +29,11 @@
                     <small class="author">By: <%= post.author %></small>
                     <br />
 
-                    <button class="edit-button">Edit</button>
-                    <button class="delete-button">Delete</button>
+                    <button class="edit-button"><a href="./edit/<%= post.id %>">Edit</a></button>
+                    <form action="/delete/<%= post.id %>" method="POST" style="display: inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                    <!-- <button class="delete-button"><a href="./delete/<%= post.id %>">Delete</a></button> -->
 
                     <hr />
                 </li>

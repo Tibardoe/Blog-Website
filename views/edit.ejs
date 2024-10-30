@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="post-body">
+    <div class="create-post-container">
+        <h1 class="new-heading">Edit Post</h1>
+        <form class="create-form-container" action="/edit/<%= post.id %>" method="POST">
+            <input class="new-title" type="text" name="postTitle" value="<%= post.title %>" placeholder="Title"
+                required>
+            <textarea rows="12" class="new-content" name="postContent" id="content" placeholder="content"
+                required><%= post.content %></textarea>
+            <input class="new-author" type="text" name="postAuthor" value="<%= post.author %>" placeholder="Author"
+                required>
+            <button type="submit" class="create-button">Edit Post</button>
+        </form>
+    </div>
+</body>
+
+</html>
